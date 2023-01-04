@@ -25,10 +25,9 @@ jobs:
         uses: actions/checkout@v3
       -
         name: Unshallow
-        run: git fetch --prune --unshallow
+        run: git fetch --prune --unshallow && mkdir -p /home/runner/.cache/go-build
       -
         name: Set up Go
-        run: mkdir -p /home/runner/.cache/go-build
         uses: actions/setup-go@v3
         with:
           go-version-file: 'go.mod'
