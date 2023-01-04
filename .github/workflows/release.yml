@@ -28,6 +28,7 @@ jobs:
         run: git fetch --prune --unshallow
       -
         name: Set up Go
+        run: mkdir -p /home/runner/.cache/go-build
         uses: actions/setup-go@v3
         with:
           go-version-file: 'go.mod'
