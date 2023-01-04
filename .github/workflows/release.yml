@@ -26,8 +26,8 @@ jobs:
       - name: Unshallow
         run: git fetch --prune --unshallow
 
-      - name: Create cache directory
-        run: mkdir -p /home/runner/.cache/go-build
+      - name: Create gomod cache directory
+        run: mkdir -p /home/runner/go/pkg/mod && export GOMODCACHE=/home/runner/go/pkg/mod
 
       - name: Set up Go
         uses: actions/setup-go@v3
